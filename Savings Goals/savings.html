@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Goals - Personal Finance Tracker</title>
+  <link rel="stylesheet" href="savingsstyle.css">
+</head>
+<body>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">&#9776;</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Personal Finance Tracker</h2>
+    <div class="nav-item">Dashboard</div>
+    <div class="nav-item">Expenses</div>
+    <div class="nav-item">Income</div>
+    <div class="nav-item">Goals</div>
+    <div class="nav-item">Debts</div>
+    <div class="nav-item">Bill Reminder</div>
+    <div class="nav-item">Savings Goals</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Savings Goals</h1>
+    <div class="content">
+      <!-- Goal Form -->
+      <div class="goal-form">
+        <h3>Create New Goal</h3>
+        <input type="text" id="goalName" placeholder="Goal Name">
+        <input type="number" id="goalTarget" placeholder="Target Amount ($)">
+        <input type="number" id="goalSaved" placeholder="Already Saved ($)">
+        <button id="addGoal">Add Goal</button>
+      </div>
+
+      <!-- Goals List -->
+      <div class="goals">
+        <h3>Your Goals</h3>
+        <div id="goalsContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="savingsscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f9fbfd;
+  color: #333;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  padding: 60px 20px 20px 20px;
+  height: 100vh;
+  transition: transform 0.3s ease;
+}
+.sidebar.hidden {
+  transform: translateX(-240px);
+}
+.nav-item {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px 0px;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background: #9dacc5;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+  margin: 0px 80px 0px 80px;
+  transition: margin .3s ease;
+}
+.sidebar.hidden ~ .main {
+  margin-left: 0;
+}
+.main h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+/* Goal Form */
+.goal-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.goal-form h3 {
+  margin-top: 0;
+}
+.goal-form input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.goal-form button {
+  width: 100%;
+  padding: 10px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.goal-form button:hover {
+  background: #1359a0;
+}
+
+/* Goals List */
+.goals {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.goal {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+.goal:last-child {
+  border-bottom: none;
+}
+.goal-name {
+  font-weight: 600;
+}
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 6px;
+  height: 10px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.progress {
+  height: 10px;
+  background: #4caf50;
+  width: 0;
+  transition: width 0.3s ease;
+}
