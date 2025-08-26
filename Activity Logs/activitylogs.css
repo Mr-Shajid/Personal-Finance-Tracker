@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f9fbfd;
+  color: #333;
+}
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.sidebar {
+  width: 220px;
+  background: #fff;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+  padding: 60px 20px 20px;
+  height: 100vh;
+  transition: transform 0.3s ease;
+}
+.sidebar.hidden {
+  transform: translateX(-240px);
+}
+
+.nav-item {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+
+.nav-item:hover {
+  background: #f1f4f9;
+}
+.main {
+  flex: 1;
+  padding: 30px;
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+}
+.sidebar.hidden ~ .main {
+  margin-left: 0;
+}
+.main h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filters input, .filters select, .filters button {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.filters button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.filters button:hover {
+  background: #1359a0;
+}
+.logs {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.logs p {
+  margin: 8px 0;
+  font-size: 14px;
+}

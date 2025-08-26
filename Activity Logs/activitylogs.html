@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Logs - Personal Finance Tracker</title>
+  <link rel="stylesheet" href="activitylogs.css">
+</head>
+<body>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">&#9776;</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Personal Finance Tracker</h2>
+    <div class="nav-item">Dashboard</div>
+    <div class="nav-item">Expenses</div>
+    <div class="nav-item">Income</div>
+    <div class="nav-item">Goals</div>
+    <div class="nav-item">Debts</div>
+    <div class="nav-item">Bill Reminders</div>
+    <div class="nav-item">Activity Logs</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Activity Logs</h1>
+    <form class="filters">
+      <input type="date" name="startDate">
+      <input type="date" name="endDate">
+      <select name="actionType">
+        <option value="">All Actions</option>
+        <option value="Goal">Goal</option>
+        <option value="Payment">Payment</option>
+        <option value="Login">Login</option>
+        <option value="Profile">Profile</option>
+      </select>
+      <button type="submit">Filter</button>
+      <button type="submit" name="export">Export CSV</button>
+    </form>
+
+    <div id="logsContainer">
+      <p>[2025-08-20] (Goal) - Created new savings goal: Vacation Fund</p>
+      <p>[2025-08-19] (Payment) - Paid electricity bill - $80</p>
+      <p>[2025-08-18] (Login) - User logged in</p>
+      <p>[2025-08-17] (Profile) - Updated profile picture</p>
+    </div>
+  </div>
+
+  <script src="activitylogs.js"></script>
+</body>
+</html>
