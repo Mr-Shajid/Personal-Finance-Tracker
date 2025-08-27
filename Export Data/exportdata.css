@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f9fbfd;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+  padding: 60px 20px 20px;
+  height: 100vh;
+}
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.nav-item {
+  padding: 12px;
+  margin: 4px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nav-item:hover {
+  background: #f1f4f9;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 30px;
+  margin-left: 220px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.tab {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #fff;
+  font-weight: 600;
+}
+.tab.active {
+  background: #eef5ff;
+  border-color: #b3d4ff;
+  color: #0056b3;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.card h3 {
+  margin-top: 0;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn.primary {
+  background: #1976d2;
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #125aa3;
+}
+
+/* Archive List */
+.archive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.archive-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}

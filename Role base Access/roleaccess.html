@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Role-Based Access - Personal Finance Tracker</title>
+  <link rel="stylesheet" href="roleaccess.css"/>
+</head>
+<body>
+  <!-- Hamburger -->
+  <div class="hamburger" id="hamburger">&#9776;</div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2>Personal Finance Tracker</h2>
+    <div class="nav-item" data-feature="Dashboard">Dashboard</div>
+    <div class="nav-item" data-feature="Expenses">Expenses</div>
+    <div class="nav-item" data-feature="Income">Income</div>
+    <div class="nav-item" data-feature="Goals">Goals</div>
+    <div class="nav-item" data-feature="Debts">Debts</div>
+    <div class="nav-item" data-feature="Bill Reminders">Bill Reminders</div>
+    <div class="nav-item" data-feature="Activity Logs">Activity Logs</div>
+    <div class="nav-item" data-feature="Admin Panel" id="adminPanel">Admin Panel</div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <header class="topbar">
+      <h1>Role-Based Access</h1>
+      <div class="preview">
+        <label for="roleSelect">Preview as:</label>
+        <select id="roleSelect">
+          <option value="user">User</option>
+          <option value="editor">Editor</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Permission Settings -->
+    <section class="card">
+      <h3>Permission Settings (static demo)</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Admin</th>
+            <th>Editor</th>
+            <th>User</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dashboard</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="checkbox" checked></td>
+          </tr>
+          <tr>
+            <td>Expenses</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="checkbox" checked></td>
+          </tr>
+          <tr>
+            <td>Admin Panel</td>
+            <td><input type="checkbox" checked></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="roleaccess.js"></script>
+</body>
+</html>

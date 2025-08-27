@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export Data - Personal Finance Tracker</title>
+  <link rel="stylesheet" href="exportdata.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Personal Finance Tracker</h2>
+    <div class="nav-item">Dashboard</div>
+    <div class="nav-item">Expenses</div>
+    <div class="nav-item">Income</div>
+    <div class="nav-item">Goals</div>
+    <div class="nav-item">Bill Reminders</div>
+    <div class="nav-item">Export Data</div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    <h1>Export Data</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="wizard">Export Wizard</button>
+      <button class="tab" data-tab="format">Format Selector</button>
+      <button class="tab" data-tab="archive">Archive Manager</button>
+    </div>
+
+    <!-- Export Wizard -->
+    <section id="wizard" class="tab-panel active">
+      <div class="card">
+        <h3>Choose Data to Export</h3>
+        <label><input type="checkbox" class="export-option" value="Expenses"> Expenses</label><br>
+        <label><input type="checkbox" class="export-option" value="Income"> Income</label><br>
+        <label><input type="checkbox" class="export-option" value="Goals"> Goals</label><br>
+        <label><input type="checkbox" class="export-option" value="Bill Reminders"> Bill Reminders</label><br>
+        <button class="btn primary" id="proceedExport">Proceed</button>
+      </div>
+    </section>
+
+    <!-- Format Selector -->
+    <section id="format" class="tab-panel">
+      <div class="card">
+        <h3>Select Export Format</h3>
+        <select id="formatSelect">
+          <option value="csv">CSV</option>
+          <option value="pdf">PDF</option>
+          <option value="qbo">QBO</option>
+        </select>
+        <button class="btn primary" id="downloadBtn">Download</button>
+      </div>
+    </section>
+
+    <!-- Archive Manager -->
+    <section id="archive" class="tab-panel">
+      <div class="card">
+        <h3>Export History</h3>
+        <ul class="archive-list">
+          <li>export_01.csv</li>
+          <li>export_02.pdf</li>
+          <li>backup_03.qbo</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="exportdata.js"></script>
+</body>
+</html>
