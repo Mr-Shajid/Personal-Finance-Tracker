@@ -1,5 +1,5 @@
 // Button click actions
-const payButtons = document.querySelectorAll('.pay-btn, .auto-btn, .pending-btn');
+const payButtons = document.querySelectorAll('.pay-btn');
 payButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     alert("Action: " + btn.innerText);

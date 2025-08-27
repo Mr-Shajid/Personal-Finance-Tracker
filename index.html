@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Finance Tracker</title>
+  <!-- this is style link -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Personal Finance </div>
+      <nav class="tabs" id="navTabs">
+        <button class="tab active" data-route="landing">Landing</button>
+        <button class="tab" data-route="income">Income Recording</button>
+        <button class="tab" data-route="accounts">Account Linking</button>
+        <button class="tab" data-route="notifications">Notifications</button>
+        <button class="tab" data-route="admin">Admin Panel</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Landing -->
+    <section id="landing" class="grid hero">
+      <div class="card">
+        <h1 style="margin:0 0 8px">My money My rules.</h1>
+        <p class="sub">
+          Don't waste your money.  Keep your money save</p>
+        <div class="kpi" style="margin:14px 0 18px">
+         
+        </div>
+        <div class="cta">
+          <button class="btn primary" data-route="income">Start logging income</button>
+          <button class="btn ghost" data-route="accounts">Link an account</button>
+        </div>
+      </div>
+      <div class="grid">
+      
+        <div class="card">
+          <h3>How to test quickly</h3>
+          <ol class="sub">
+            <li>Go to <strong>Income Recording</strong> → add entries → see table update.</li>
+            <li>Open <strong>Account Linking</strong> → run the wizard → check Sync Status.</li>
+            <li>Use <strong>Notifications</strong> → save settings → send test.</li>
+            <li>Hit <strong>Admin Panel</strong> → update roles → view audit log.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Income Recording -->
+    <section id="income" hidden>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Paycheck Log</h3>
+          <form id="formPaycheck">
+            <div class="row">
+              <div class="field"><label>Comment</label><input name="payee" placeholder="My Comment" required /><span class="error"></span></div>
+              <div class="field"><label>Amount</label><input name="amount" inputmode="decimal" placeholder="my taka" required /><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="paycheck-date">Date</label><input id="paycheck-date" type="date" name="date" required /><span class="error"></span></div>
+             
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit">Add Data</button>
+              <button class="btn" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>My Income Setup</h3>
+          <form id="formRecurring">
+            <div class="row">
+              <div class="field"><la\bel>Source</label><input name="source" placeholder="Salary" required /><span class="error"></span></div>
+              <div class="field"><label>Amount</label><input name="amount" inputmode="decimal" placeholder="taka" required /><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="freq">Frequency</label>
+                <select id="freq" name="freq" required>
+                  <option value="">Select…</option>
+                  <option>Daily</option>
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                 
+                </select>
+                <span class="error"></span>
+              </div>
+              <div class="field"><label for="recurring-next">Next Date</label><input id="recurring-next" type="date" name="next" required /><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit">Save Recurring</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>My Side Income</h3>
+          <form id="formHustle">
+            <div class="row">
+              <div class="field"><label>Source</label><input name="client" placeholder="comment" required /><span class="error"></span></div>
+              <div class="field"><label>Amount</label><input name="amount" inputmode="decimal" placeholder="taka" required /><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <div class="field"><label for="hustle-date">Date</label><input id="hustle-date" type="date" name="date" required /><span class="error"></span></div>
+            
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit">Add Side income</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h3>Entries</h3>
+        <table class="table" id="incomeTable">
+          <thead><tr><th>Type</th><th>Source</th><th>Date</th><th>Amount</th><th>Ref/Notes</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Account Linking-->
+    <section id="accounts" hidden>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Bank Connection</h3>
+          <form id="formLink">
+            <div class="row">
+              <div class="field"><label>Bank Name</label><input name="bank" placeholder="DBBL / bKash / City" required /><span class="error"></span></div>
+              <div class="field"><label for="account-type">Account Type</label>
+                <select id="account-type" name="type" required>
+                  <option value="">Select…</option>
+                  <option>Checking</option>
+                  <option>Savings</option>
+                  <option>Credit Card</option>
+                  <option>Mobile Wallet</option>
+                </select>
+                <span class="error"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Username</label><input name="username" placeholder="Name" required /><span class="error"></span></div>
+              <div class="field"><label>Password</label><input type="password" name="password" required minlength="6" placeholder="••••••" /><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>2FA Code (if any)</label><input name="otp" inputmode="numeric" placeholder="123456" pattern="\d{6}" /><span class="hint">6 digits</span><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit">Connect</button>
+              <button class="btn" type="button" id="btnDisconnect">Disconnect</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Sync Status</h3>
+          <p class="sub">Shows last sync, status, and errors.</p>
+          <div class="grid">
+            <div class="pill"><strong>Last Sync:</strong> <span id="lastSync">—</span></div>
+            <div class="pill"><strong>Status:</strong> <span id="syncState" class="badge-dot"><span id="syncDot" class="dot"></span><span id="syncText">Not linked</span></span></div>
+            <div class="pill"><strong>Errors:</strong> <span id="syncError">None</span></div>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <button class="btn" id="btnForceSync">Force Sync</button>
+            <button class="btn warn" id="btnSimulateError">Simulate Error</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Notifications -->
+    <section id="notifications" hidden>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Notification Settings</h3>
+          <form id="formNotify">
+            <div class="row">
+              <div class="field"><label>Email</label><input name="email" placeholder="you@example.com" required /><span class="error"></span></div>
+              <div class="field"><label>Advance Days</label><input name="advance" inputmode="numeric" placeholder="3" required /><span class="error"></span></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Channels</label>
+                <div class="row">
+                  <label><input type="checkbox" name="ch_email" checked /> Email</label>
+                  <label><input type="checkbox" name="ch_inapp" checked /> In‑app</label>
+                  <label><input type="checkbox" name="ch_push" /> Push</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit">Save Settings</button>
+              <button class="btn" type="button" id="btnTestNotify">Send Test</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Notification Center</h3>
+          <ul id="notifyFeed" class="sub" style="list-style:none;padding-left:0;margin:0;display:grid;gap:8px"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin" hidden>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>User Management</h3>
+          <table class="table" id="userTable">
+            <thead><tr><th>Email</th><th>Role</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>System Settings</h3>
+          <form id="formSys">
+            <div class="row">
+              <label><input type="checkbox" name="maintenance" /> Maintenance Mode</label>
+            </div>
+            <div class="row">
+              <label><input type="checkbox" name="audit" checked /> Enable Audit Log</label>
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit">Save</button>
+            </div>
+          </form>
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px">Audit Log</h4>
+            <ul id="audit" class="sub" style="list-style:none;padding-left:0;margin:0;display:grid;gap:6px"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/core/utils.js"></script>
+  <script src="js/core/validation.js"></script>
+  
+  <!-- Module Scripts -->
+  <script src="js/modules/income.js"></script>
+  <script src="js/modules/accounts.js"></script>
+  <script src="js/modules/notifications.js"></script>
+  <script src="js/modules/admin.js"></script>
+  
+  <!-- Main App -->
+  <script src="js/app.js"></script>
+  
+  <!-- Connect Validation to All Forms -->
+  <script>
+    // Start validation when page loads
+    window.addEventListener('load', function() {
+        // Connect validation to all forms automatically
+        addValidationToForm('formPaycheck');
+        addValidationToForm('formRecurring'); 
+        addValidationToForm('formHustle');
+        addValidationToForm('formLink');
+        addValidationToForm('formNotify');
+        addValidationToForm('formSys');
+        
+        console.log('Validation connected to all forms!');
+    });
+  </script>
+</body>
+</html>
