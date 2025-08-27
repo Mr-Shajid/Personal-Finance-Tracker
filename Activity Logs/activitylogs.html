@@ -24,16 +24,16 @@
   <div class="main">
     <h1>Activity Logs</h1>
     <form class="filters">
-      <input type="date" name="startDate">
-      <input type="date" name="endDate">
-      <select name="actionType">
+      <input type="date" name="startDate" id="startDate">
+      <input type="date" name="endDate" id="endDate">
+      <select name="actionType" id="actionType">
         <option value="">All Actions</option>
         <option value="Goal">Goal</option>
         <option value="Payment">Payment</option>
         <option value="Login">Login</option>
         <option value="Profile">Profile</option>
       </select>
-      <button type="submit">Filter</button>
+      <button type="submit" id="filterButton">Filter</button>
       <button type="submit" name="export">Export CSV</button>
     </form>
 
