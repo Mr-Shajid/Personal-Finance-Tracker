@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.tabs button {
+  margin: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+}
+
+canvas {
+  max-width: 600px;
+  margin-top: 20px;
+}

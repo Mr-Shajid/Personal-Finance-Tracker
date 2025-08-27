@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.quick-actions button {
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.widgets {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.widget {
+  background: #f1f1f1;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+.widget:hover {
+  background: #e0e0e0;
+}
+
+.detail {
+  text-align: left;
+  max-width: 400px;
+  margin: 20px auto;
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px #ddd;
+}

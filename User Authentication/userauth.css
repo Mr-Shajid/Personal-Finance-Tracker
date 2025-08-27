@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.screen {
+  max-width: 300px;
+  margin: auto;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+a {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}

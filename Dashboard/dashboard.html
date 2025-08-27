@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>My Expense Dashboard</h1>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions">
+    <button onclick="alert('Add Category clicked')">+ Add Category</button>
+    <button onclick="alert('Add Expense clicked')">+ Add Expense</button>
+  </div>
+
+  <!-- Summary Widgets -->
+  <div class="widgets">
+    <div class="widget" onclick="toggleDetail('expensesDetail')">
+      <h3>Total Expenses</h3>
+      <p>৳ 12,300</p>
+    </div>
+    <div class="widget" onclick="toggleDetail('incomeDetail')">
+      <h3>Total Income</h3>
+      <p>৳ 15,000</p>
+    </div>
+    <div class="widget" onclick="toggleDetail('savingsDetail')">
+      <h3>Savings</h3>
+      <p>৳ 2,700</p>
+    </div>
+  </div>
+
+  <!-- Hidden Details -->
+  <div id="expensesDetail" class="detail" style="display:none;">
+    <h4>Expense Breakdown</h4>
+    <ul>
+      <li>Food: ৳ 4,000</li>
+      <li>Transport: ৳ 2,000</li>
+      <li>Utilities: ৳ 1,300</li>
+    </ul>
+  </div>
+
+  <div id="incomeDetail" class="detail" style="display:none;">
+    <h4>Income Sources</h4>
+    <ul>
+      <li>Salary: ৳ 12,000</li>
+      <li>Freelance: ৳ 3,000</li>
+    </ul>
+  </div>
+
+  <div id="savingsDetail" class="detail" style="display:none;">
+    <h4>Savings Activity</h4>
+    <ul>
+      <li>Saved from salary: ৳ 2,000</li>
+      <li>Others: ৳ 700</li>
+    </ul>
+  </div>
+
+  <!-- Chart Overview -->
+  <div>
+    <h2>Analytics Overview</h2>
+    <canvas id="overviewChart"></canvas>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
