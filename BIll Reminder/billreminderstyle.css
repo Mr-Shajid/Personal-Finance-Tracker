@@ -11,10 +11,10 @@ body {
   top: 20px;
   left: 20px;
   z-index: 1000;
-    font-size: 24px;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: 8px 12px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px 12px;
 }
 
 /* Sidebar */
@@ -30,7 +30,7 @@ body {
 }
 
 .sidebar h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
   color: #444;
@@ -46,6 +46,12 @@ body {
 .nav-item:hover {
   background: #b6bfce;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Main Content */
 .main {
   flex: 1;
@@ -70,24 +76,29 @@ body {
   border-radius: 12px;
   padding: 20px;
 }
-.calendar table {
+
+.calendar .date {
+  box-sizing: border-box;
   width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-}
-.calendar th, .calendar td {
-  padding: 10px;
-  font-size: 14px;
-}
-.calendar td {
+  padding: 12px;
+  border: 1px solid #ece6e6;
   border-radius: 6px;
+  font-size: 20px;
+}
+
+.calendar .submit {
+  margin-top: 10px;
+  box-sizing: border-box;
+  width: 35%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
 }
-.calendar td.due {
-  background: #ffebee;
-  color: #d32f2f;
-  font-weight: 600;
-}
+
 /* Upcoming Bills */
 .bills {
   background: #fff;
