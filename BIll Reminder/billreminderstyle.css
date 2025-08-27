@@ -19,7 +19,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 280px;
+  width: 220px;
   background: #fff;
   padding: 60px 20px 20px;
   height: 100vh;
@@ -29,12 +29,6 @@ body {
   transform: translateX(-100%);
 }
 
-.sidebar h2 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #444;
-}
 .nav-item {
   padding: 12px;
   border-radius: 8px;

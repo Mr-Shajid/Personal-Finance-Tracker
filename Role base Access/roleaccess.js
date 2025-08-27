@@ -1,25 +1,11 @@
-// Sidebar toggle
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-hamburger.addEventListener('click', () => {
-  sidebar.classList.toggle('hidden');
+// Toggle sidebar visibility
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('hidden');
 });
 
-// Role selector logic
-const roleSelect = document.getElementById('roleSelect');
-const adminPanel = document.getElementById('adminPanel');
-
-function updateSidebar(role) {
-  if (role === 'admin') {
-    adminPanel.style.display = 'block';
-  } else {
-    adminPanel.style.display = 'none';
-  }
-}
-
-roleSelect.addEventListener('change', () => {
-  updateSidebar(roleSelect.value);
+// Assign roles 
+document.getElementById('assignBtn').addEventListener('click', () => {
+  const user = document.getElementById('userSelect').value;
+  const role = document.getElementById('roleSelect').value;
+  alert(`Assigned role: ${role} to ${user}`);
 });
-
-// Initialize default state
-updateSidebar('user');

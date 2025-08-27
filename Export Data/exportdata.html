@@ -7,65 +7,59 @@
   <link rel="stylesheet" href="exportdata.css">
 </head>
 <body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger" id="hamburger">&#9776;</div>
+
   <!-- Sidebar -->
-  <aside class="sidebar">
+  <div class="sidebar" id="sidebar">
     <h2>Personal Finance Tracker</h2>
-    <div class="nav-item">Dashboard</div>
-    <div class="nav-item">Expenses</div>
-    <div class="nav-item">Income</div>
-    <div class="nav-item">Goals</div>
-    <div class="nav-item">Bill Reminders</div>
-    <div class="nav-item">Export Data</div>
-  </aside>
+    <div class="nav-item"><a href="../Bill Reminder/billreminder.html">Bill Reminders</a></div>
+    <div class="nav-item"><a href="../Savings Goals/savings.html">Goals</a></div>
+    <div class="nav-item"><a href="../Export Data/exportdata.html">Export Data</a></div>
+    <div class="nav-item"><a href="../Role base Access/roleaccess.html">Role Based Access</a></div>
+    <div class="nav-item"><a href="../Activity Logs/activitylogs.html">Activity Log</a></div>
+  </div>
 
   <!-- Main Content -->
-  <main class="main">
+  <div class="main">
     <h1>Export Data</h1>
+    <div class="content">
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab active" data-tab="wizard">Export Wizard</button>
-      <button class="tab" data-tab="format">Format Selector</button>
-      <button class="tab" data-tab="archive">Archive Manager</button>
-    </div>
-
-    <!-- Export Wizard -->
-    <section id="wizard" class="tab-panel active">
+      <!-- Export Wizard -->
       <div class="card">
-        <h3>Choose Data to Export</h3>
-        <label><input type="checkbox" class="export-option" value="Expenses"> Expenses</label><br>
-        <label><input type="checkbox" class="export-option" value="Income"> Income</label><br>
-        <label><input type="checkbox" class="export-option" value="Goals"> Goals</label><br>
-        <label><input type="checkbox" class="export-option" value="Bill Reminders"> Bill Reminders</label><br>
-        <button class="btn primary" id="proceedExport">Proceed</button>
+        <h3>Export Wizard</h3>
+        <button class="btn">Start Export</button>
       </div>
-    </section>
 
-    <!-- Format Selector -->
-    <section id="format" class="tab-panel">
+      <!-- Format Selector -->
       <div class="card">
-        <h3>Select Export Format</h3>
-        <select id="formatSelect">
-          <option value="csv">CSV</option>
-          <option value="pdf">PDF</option>
-          <option value="qbo">QBO</option>
+        <h3>Format Selector</h3>
+        <select class="select">
+          <option>CSV</option>
+          <option>PDF</option>
+          <option>QBO</option>
         </select>
-        <button class="btn primary" id="downloadBtn">Download</button>
       </div>
-    </section>
 
-    <!-- Archive Manager -->
-    <section id="archive" class="tab-panel">
+      <!-- Archive Manager -->
       <div class="card">
-        <h3>Export History</h3>
-        <ul class="archive-list">
-          <li>export_01.csv</li>
-          <li>export_02.pdf</li>
-          <li>backup_03.qbo</li>
-        </ul>
+        <h3>Archive Manager</h3>
+        <button class="btn">View Archives</button>
       </div>
-    </section>
-  </main>
+
+      <!-- Options -->
+      <div class="card">
+        <h3>Options</h3>
+        <label><input type="checkbox" checked> Schedule Automatic Backups</label><br>
+        <label><input type="checkbox"> Encrypt Sensitive Exports</label>
+      </div>
+
+      <!-- Export Button -->
+      <div class="card">
+        <button class="btn export-btn">Download Export</button>
+      </div>
+    </div>
+  </div>
 
   <script src="exportdata.js"></script>
 </body>
