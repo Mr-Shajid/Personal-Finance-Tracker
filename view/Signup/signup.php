@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = trim($_POST['password']);
 
     $error = "";
-    $success = "";
+    $success = "Account created successfully!";
 
     // Basic validation
     if (empty($name)) {
@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Redirect with error or success message
     if (!empty($error)) {
-        header("Location: signup.php?error=" . urlencode($error));
+        header("Location: signup.php?error=$error");
         exit;
     } else {
-        header("Location: /Personal-Finance-Tracker/Login/login.php?success=" . urlencode("Account created successfully!"));
+        header("Location: /Personal-Finance-Tracker/view/Login/login.php?success=$success");
         exit;
     }
 }
