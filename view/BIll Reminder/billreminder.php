@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['status'])){
+        header('location:/Personal-Finance-Tracker/view/Login/login.php?error=badrequest');
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

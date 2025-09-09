@@ -1,19 +1,18 @@
 <?php
     session_start();
 
-    $username = trim($_REQUEST['login_name']);
-    $password = trim($_REQUEST['login_password']);
-    $email = trim($_REQUEST['login_email']);
+    $username = trim($_REQUEST['username']);
+    $password = trim($_REQUEST['password']);
+    $email = trim($_REQUEST['useremail']);
 
     if($username == "" || $password == "" || $email == ""){
-        header('location: login.php?error=null');
+        header('location:/Personal-Finance-Tracker/view/Login/login.php?error=null');
     }else{
         if($username == "shajid" && $password == "123456" && $email == "shajid3@gmail.com"){
-            $_SESSION['username'] = $username;
-            setcookie('status', true, time()+3000, '/');
-            header('location: /Personal-Finance-Tracker/view/Bill Reminder/billreminder.html');
+            $_SESSION['status'] = true;
+            header('location:/Personal-Finance-Tracker/view/Bill Reminder/billreminder.php?session=true');
         }else{
-            header('location: login.php?error=invalid');
+            header('location:/Personal-Finance-Tracker/view/Login/login.php?error=invalid');
         }
     }
 ?>
