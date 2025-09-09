@@ -20,7 +20,7 @@
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <h2>Personal Finance Tracker</h2>
-    <div class="nav-item"><a href="../Bill Reminder/billreminder.html">Bill Reminders</a></div>
+    <div class="nav-item"><a href="../Bill Reminder/billreminder.php">Bill Reminders</a></div>
     <div class="nav-item"><a href="../Savings Goals/savings.html">Goals</a></div>
     <div class="nav-item"><a href="../Export Data/exportdata.html">Export Data</a></div>
     <div class="nav-item"><a href="../Role base Access/roleaccess.html">Role Based Access</a></div>
