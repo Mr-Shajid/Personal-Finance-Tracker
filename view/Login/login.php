@@ -22,22 +22,22 @@ if (isset($_REQUEST['error'])) {
 </head>
 <body>
 <div class="container">
-    <form class="login-form" method="post" action="logincheck.php">
+    <form class="login-form" method="post" action="/Personal-Finance-Tracker/controller/logincheck.php" enctype="multipart/form-data">
         <h1>Login</h1>
 
         <div class="form-group">
             <label for="login_name">Name:</label>
-            <input type="text" id="login_name" name="login_name" placeholder="Enter your name">
+            <input type="text" id="login_name" name="username" placeholder="Enter your name">
         </div>
 
         <div class="form-group">
             <label for="login_email">Email:</label>
-            <input type="text" id="login_email" name="login_email" placeholder="Enter your email">
+            <input type="text" id="login_email" name="useremail" placeholder="Enter your email">
         </div>
 
         <div class="form-group">
             <label for="login_password">Password:</label>
-            <input type="password" id="login_password" name="login_password" placeholder="Enter your password">
+            <input type="password" id="login_password" name="password" placeholder="Enter your password">
         </div>
 
         <button type="submit" class="btn">Login</button>

@@ -1,0 +1,72 @@
+/* Reset default margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #2d3e50;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Buttons */
+.btn {
+  background: #4cafef;
+  color: white;
+}
+
+.btn:hover {
+  background: #3a96d1;
+}
+
+.btn-outline {
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #2d3e50;
+}
+
+/* Hero section */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #f4f7fa;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+}

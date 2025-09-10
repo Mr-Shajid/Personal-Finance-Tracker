@@ -1,47 +1,35 @@
 <?php
+$error = "";
+$success = "";
+
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    $error = "";
-    $success = "Account created successfully!";
-
     // Basic validation
     if (empty($name)) {
-    $error = "Name is required";
-} elseif (empty($email)) {
-    $error = "Email is required";
-} else {
-    $hasAt = false;
-    for ($i = 0; $i < strlen($email); $i++) {
-        if ($email[$i] === '@') {
-            $hasAt = true;
-            break;
-        }
-    }
-    if (!$hasAt) {
+        $error = "Name is required";
+    } elseif (empty($email)) {
+        $error = "Email is required";
+    } elseif (strpos($email, '@') === false) {
         $error = "Email must contain @";
     } elseif (empty($password)) {
         $error = "Password is required";
     } elseif (strlen($password) < 6) {
         $error = "Password must be at least 6 characters";
-    }
-}
-
-
-    // Redirect with error or success message
-    if (!empty($error)) {
-        header("Location: signup.php?error=$error");
-        exit;
     } else {
+<<<<<<< HEAD
         header("Location:/Project/Personal-Finance-Tracker/view/Login/login.php?success=$success");
         exit;
+=======
+        $success = "Account created successfully!";
+>>>>>>> a569003eaa638257d858572ee070b2f0e652c847
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,36 +43,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
 
 <?php
-    if (isset($_GET['error'])) {
-        echo "<script>alert('" . $_GET['error'] . "');</script>";
-    } elseif (isset($_GET['success'])) {
-        echo "<script>alert('" . ($_GET['success']) . "');</script>";
-    }
-    ?>
+$message = "";
+
+if (!empty($error)) {
+    $message = $error;
+} elseif (!empty($success)) {
+    $message = $success;
+}
+
+if (!empty($message)) {
+    echo "<script>alert('$message');</script>";
+}
+?>
 
 
-    <div class="container">
-        <form class="signup-form" method="post">
-            <legend><h1>Sign Up</h1></legend>
+<div class="container">
+    <form class="signup-form" method="post">
+        <legend><h1>Sign Up</h1></legend>
 
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" >
-            </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name"
+                   value="<?php echo htmlspecialchars($name ?? ''); ?>">
+        </div>
 
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" placeholder="example@email.com">
-            </div>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com"
+                   value="<?php echo htmlspecialchars($email ?? ''); ?>">
+        </div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Create a password" >
-            </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password">
+        </div>
 
-            <button type="submit" class="btn">Create Account</button>
-        </form>
-    </div>
+        <button type="submit" class="btn">Create Account</button>
+    </form>
+</div>
 </body>
 </html>
-
