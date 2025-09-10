@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: signup.php?error=$error");
         exit;
     } else {
-        header("Location: /Personal-Finance-Tracker/view/Login/login.php?success=$success");
+        header("Location:/Project/Personal-Finance-Tracker/view/Login/login.php?success=$success");
         exit;
     }
 }
