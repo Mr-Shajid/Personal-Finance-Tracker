@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Expense Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="reports.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>Expense Reports</h1>
+
+  <div class="tabs">
+    <button onclick="showScreen('trends')">Spending Trends</button>
+    <button onclick="showScreen('compare')">Income vs Expense</button>
+    <button onclick="showScreen('networth')">Net Worth</button>
+  </div>
+
+  <!-- Spending Trends -->
+  <div id="trends" class="screen">
+    <h2>Spending Trends</h2>
+    <label>From: <input type="date" id="startDate" /></label>
+    <label>To: <input type="date" id="endDate" /></label>
+    <button onclick="filterTrends()">Generate</button>
+    <canvas id="trendChart"></canvas>
+    <button onclick="downloadChart('trendChart')">Download Chart</button>
+  </div>
+
+  <!-- Income vs Expense -->
+  <div id="compare" class="screen" style="display:none;">
+    <h2>Income vs Expense</h2>
+    <canvas id="barChart"></canvas>
+    <button onclick="downloadChart('barChart')">Download Chart</button>
+  </div>
+
+  <!-- Net Worth -->
+  <div id="networth" class="screen" style="display:none;">
+    <h2>Net Worth Calculator</h2>
+    <label>Assets: <input type="number" id="assets" /></label><br />
+    <label>Liabilities: <input type="number" id="liabilities" /></label><br />
+    <button onclick="calculateNetWorth()">Calculate</button>
+    <p id="netResult"></p>
+  </div>
+
+  <script src="reports.js"></script>
+</body>
+</html>

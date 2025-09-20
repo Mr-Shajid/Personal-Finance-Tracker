@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f9fbfd;
+  color: #333;
+}
+/* Hamburger Icon */
+.hamburger {
+  position:fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  padding: 60px 20px 20px;
+  height: 100vh;
+  transition: transform 0.3s ease;
+}
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.nav-item {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background: #b6bfce;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+.sidebar.hidden ~ .main {
+  margin-left: 0;
+}
+.main h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+/* Calendar */
+.calendar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.calendar .date {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ece6e6;
+  border-radius: 6px;
+  font-size: 20px;
+}
+
+.calendar .submit {
+  margin-top: 10px;
+  box-sizing: border-box;
+  width: 35%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Upcoming Bills */
+.bills {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+.bill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+.bill:last-child {
+  border-bottom: none;
+}
+.bill .info {
+  font-size: 14px;
+}
+.bill button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.pay-btn {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* Notifications toggle */
+.notifications {
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+}
+.notifications label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
